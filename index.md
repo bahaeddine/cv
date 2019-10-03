@@ -10,7 +10,7 @@ title: Baha Eddine BOUKHZAR
 * ✗ Cloud/ DevOps Engineer @Renault
 <div id="webaddress">
 <a target="_blank"  href="bahaeddine005@gmail.com">bahaeddine005@gmail.com</a>
-| <a target="_blank"  href="https://about.me/bahaeddinebkz"> about me</a>
+| <a target="_blank"  href="https://about.me/bahaeddine"> about me</a>
 </div>
 
 
