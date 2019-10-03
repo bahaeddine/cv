@@ -48,7 +48,7 @@ Red Hat Certified System Administrator
 
 Click <a href="https://www.redhat.com/rhtapps/certification/verify/?certId=160-214-961">here</a> to see certificate.
 
-### LPIC 1
+### LPIC 2
 
 `Jan 2016`
 
