@@ -42,27 +42,27 @@ __Bachelor of Mathematics- with honors__
 ## Experiences
 
 ### Renault AITS
-`Decembre 2018 - Now `
+`Decembre 2018 - Now`
 __As a Cloud and DevOps Engineer__
 * ✗ ...
 
 ### Ingenico Group
-`February 2018 - December 2018 `
+`February 2018 - December 2018`
 __As a Continuous Integration Expert__
 * ✗ ...
 
 ### Paris-Dauphine University
-`December 2017 - January 2018 `
+`December 2017 - January 2018`
 __As a DevOps Engineer__
 * ✗ ...
 
 ### Sofrecom TUNISIA
-`April 2016 - November 2017 `
+`April 2016 - November 2017`
 __As a Systems and Integration Engineer__
 * ✗ ...
 
 ### Web Hosting Canada
-`July 2015 - April 2016 `
+`July 2015 - April 2016`
 __As a Web Hosting Specialist__
 * ✗ ...
 
