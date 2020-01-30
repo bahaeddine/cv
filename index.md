@@ -38,7 +38,7 @@ __Preparatory Studies Entrance to the Engineering Program__
 
 `2009-2010`
 __Bachelor of Mathematics- with honors__
-- Tunis - Alaoui High School
+- Korba - Al Akhlak School
 
 ## Certifications
 
