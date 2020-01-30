@@ -2,7 +2,8 @@
 layout: cv
 title: Baha Eddine BOUKHZAR
 ---
-# Baha Eddine BOUKHZAR
+# Baha Eddine BOUKHZAR 
+DevOps / Kubernetes / Docker / Google Cloud
 * ✗ ⎈ Certified Kubernetes Administrator ⎈ 
 * ✗ Certified Red Hat Certification System Administration II
 * ✗ Certified Junior level Linux certification LPIC2
@@ -13,7 +14,31 @@ title: Baha Eddine BOUKHZAR
 | <a target="_blank"  href="https://about.me/bahaeddine"> about me</a>
 </div>
 
+## Currently
 
+Today working as Cloud/ DevOps Engineer at Renault. Certified Kubernetes Administrator, experienced also with cicd tools and Google cloud Platform. Working in Cloud Transformation team at Renault to help developpers to move and transform application from Renault intranet Datacenter to the cloud using kubernets, Docker, Helm, Gitlab-ci, Jenkins and a bunch of other DevOps tools.
+
+
+Privously at Ingenico as an expect Continuous Integration, accompanying developers to automate the integration of code changes from multiple contributors into a single software project using Ansible, Jenkins, Bitbucket, Docker and a bunch of other DevOps tools.
+
+## Education
+
+`Juin 2015`
+__Obtaining the National Engineering Degree in Computer Networks and Telecomunications__
+- Tunis - INSAT, National Institute of Applied Sciences and Technology.
+
+
+`2012-2015`
+__Engineering studies in Computer Networks and Telecommunications specialized in Information System's Security__
+- Tunis - INSAT, National Institute of Applied Sciences and Technology.
+
+`2010-2012`
+__Preparatory Studies Entrance to the Engineering Program__
+- Tunis - INSAT, National Institute of Applied Sciences and Technology.
+
+`2009-2010`
+__Bachelor of Mathematics- with honors__
+- Tunis - Alaoui High School
 
 ## Certifications
 
