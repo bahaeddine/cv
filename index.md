@@ -23,19 +23,23 @@ Previously at Ingenico as a Continuous Integration expert, accompanying develope
 ## Education
 
 `Juin 2015`
+
 __Obtaining the National Engineering Degree in Computer Networks and Telecomunications__
 - Tunis - INSAT, National Institute of Applied Sciences and Technology.
 
 
 `2012-2015`
+
 __Engineering studies in Computer Networks and Telecommunications specialized in Information System's Security__
 - Tunis - INSAT, National Institute of Applied Sciences and Technology.
 
 `2010-2012`
+
 __Preparatory Studies Entrance to the Engineering Program__
 - Tunis - INSAT, National Institute of Applied Sciences and Technology.
 
 `2009-2010`
+
 __Bachelor of Mathematics- with honors__
 - Korba - Al Akhlak School
 
