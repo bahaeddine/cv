@@ -66,7 +66,7 @@ p {
 	left: 33%;
 	margin-bottom: 1.1em;
 	margin-right: 1em;
-	width: 85%;
+	width: 90%;
 }
 
 code {
@@ -130,6 +130,11 @@ h1+p {
 	/*subtitle*/
 	font-style: italic;
 	font-size: 110%;
+	position: relative;
+	left: 33%;
+	margin-bottom: 0.7em;
+	margin-right: 0;
+	width: 65%;
 }
 
 h2 {
