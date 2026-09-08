@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-08T00:00:00Z",
+  "title": "Design System: Baha Eddine Boukhzar — CV",
+  "extensions": {
+    "colorMeta": {
+      "burnished-gold": {
+        "role": "primary",
+        "displayName": "Burnished Gold",
+        "canonical": "#82581F",
+        "tonalRamp": ["#3E2A0F", "#6D4A1A", "#9C6A25", "#CB8930", "#D8A45D", "#E4BF8C", "#EFD9BB", "#FAF3EA"]
+      },
+      "burnished-gold-bright": {
+        "role": "primary",
+        "displayName": "Burnished Gold, Bright",
+        "canonical": "#D4AD5C",
+        "tonalRamp": ["#3D2E10", "#6B511C", "#997428", "#C79734", "#D5AF60", "#E1C68F", "#EEDEBD", "#FAF5EB"]
+      },
+      "gold-signal": {
+        "role": "primary-variant",
+        "displayName": "Signal Gold",
+        "canonical": "#C79A3E",
+        "tonalRamp": []
+      },
+      "stone-paper": {
+        "role": "neutral",
+        "displayName": "Stone Paper",
+        "canonical": "#E4E3DC",
+        "tonalRamp": ["#2B2A21", "#4C4A3B", "#6D6A54", "#8E8A6D", "#A8A58E", "#C1BFAF", "#DBD9D0", "#F4F3F1"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1B1B19",
+        "tonalRamp": ["#282825", "#464641", "#64645D", "#838379", "#9F9F97", "#BBBBB5", "#D7D7D3", "#F3F3F2"]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#20211B",
+        "tonalRamp": ["#292A22", "#484A3D", "#676A57", "#868A71", "#A2A591", "#BDBFB1", "#D8D9D1", "#F3F4F1"]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Ivory",
+        "canonical": "#F3F0E6",
+        "tonalRamp": ["#342D19", "#5B502C", "#82733F", "#AA9552", "#BEAE78", "#D1C59F", "#E4DDC6", "#F7F5EE"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name only (h1.name)." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2.head across About, Experience, Skills, Certifications, Contact." },
+      "title": { "displayName": "Title", "purpose": "Company/role name in the experience accordion (.exp-company)." },
+      "caption": { "displayName": "Caption / Kicker", "purpose": "Italic label above every section headline; the system's one italic use." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy; hero tagline runs slightly larger at 18px." },
+      "label": { "displayName": "Label", "purpose": "Nav labels, hero eyebrow, meta-row text, footer quicknav links." }
+    },
+    "shadows": [
+      { "name": "portrait-lift", "value": "0 6px 22px rgba(27,26,22,0.14)", "purpose": "The only structural shadow in the system — grounds the circular headshot." },
+      { "name": "active-dot-ring", "value": "0 0 0 3px rgba(128,124,112,0.18)", "purpose": "Soft halo around the side-rail dot at rest, confirming it as a nav target rather than decoration." }
+    ],
+    "motion": [
+      { "name": "reveal-ease", "value": "opacity .7s ease, transform .7s ease", "purpose": "Scroll-triggered fade/rise (24px) for section content; disabled under prefers-reduced-motion." },
+      { "name": "accordion-ease", "value": "max-height .5s ease", "purpose": "Experience row open/close; deliberately unhurried, no spring or overshoot." },
+      { "name": "glow-pulse", "value": "glowpulse 10s ease-in-out infinite", "purpose": "Slow ambient pulse on the hero's radial-gradient glow." },
+      { "name": "field-drift", "value": "drift 18s ease-in-out infinite", "purpose": "Slow rotate/translate drift on the hero's decorative field-line." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "820px" },
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Skill Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Static pill-shaped tag listing a single tool/technology under a skill category.",
+      "html": "<span class=\"ds-tag\">Kubernetes / GKE</span>",
+      "css": ".ds-tag { display: inline-block; font-size: 13px; color: rgba(27,27,25,0.64); border: 1px solid rgba(24,24,22,0.13); padding: 5px 12px; border-radius: 999px; background: transparent; }"
+    },
+    {
+      "name": "Side Rail Nav Dot",
+      "kind": "nav",
+      "refersTo": "nav-dot",
+      "description": "Fixed vertical nav item: a small dot plus a hover-revealed label tooltip; active state brightens and scales the dot.",
+      "html": "<div class=\"ds-dot-item ds-dot-item--active\"><button aria-label=\"About\"><span class=\"ds-dot\"></span></button><span class=\"ds-dot-label\">About</span></div>",
+      "css": ".ds-dot-item { position: relative; display: flex; align-items: center; } .ds-dot-item button { background: none; border: none; padding: 8px; cursor: pointer; display: flex; align-items: center; } .ds-dot { width: 7px; height: 7px; border-radius: 50%; background: #9A968A; box-shadow: 0 0 0 3px rgba(128,124,112,0.18); transition: background .3s, transform .3s; } .ds-dot-item--active .ds-dot { background: #C79A3E; transform: scale(1.5); } .ds-dot-label { position: absolute; left: 26px; font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: .03em; color: #F3F0E6; background: rgba(20,20,17,0.78); padding: 4px 10px; border-radius: 4px; white-space: nowrap; opacity: 0; transform: translateX(-6px); transition: opacity .25s, transform .25s; pointer-events: none; } .ds-dot-item:hover .ds-dot-label { opacity: 1; transform: translateX(0); }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "The system's single interactive-link pattern — used for contact rows, meta text, and certification verify links; a bottom border and gold color appear on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">bahaeddine.boukhzar@gmail.com</a>",
+      "css": ".ds-link { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s, color .2s; } .ds-link:hover { color: #1B1B19; border-color: #A1752B; }"
+    },
+    {
+      "name": "Accordion Experience Row",
+      "kind": "custom",
+      "refersTo": "exp-row",
+      "description": "Signature component: a company header that expands to reveal one or more role blocks. Height-animates open via max-height, no chevron rotation.",
+      "html": "<div class=\"ds-exp-row ds-exp-row--open\"><div class=\"ds-exp-top\"><span class=\"ds-exp-company\">Renault Group</span><span class=\"ds-exp-when\">Dec 2018 — Present <span class=\"ds-exp-toggle\">＋</span></span></div><div class=\"ds-exp-body\"><div class=\"ds-exp-role\"><div class=\"ds-r-meta\">Nov 2024 — Present</div><div><div class=\"ds-r-title\">Software Factory Platform Engineer</div></div></div></div></div>",
+      "css": ".ds-exp-row { border-bottom: 1px solid rgba(24,24,22,0.13); padding: 26px 0; cursor: pointer; } .ds-exp-top { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; } .ds-exp-company { font-family: 'Fraunces', serif; font-size: 23px; font-weight: 500; } .ds-exp-when { font-size: 12.5px; color: rgba(27,27,25,0.42); white-space: nowrap; } .ds-exp-body { max-height: 0; overflow: hidden; transition: max-height .5s ease; } .ds-exp-row--open .ds-exp-body { max-height: 900px; } .ds-exp-role { padding-top: 20px; display: grid; grid-template-columns: 220px 1fr; gap: 6px 28px; font-size: 14px; color: rgba(27,27,25,0.64); } .ds-r-meta { color: rgba(27,27,25,0.42); font-size: 12.5px; padding-top: 2px; } .ds-r-title { color: #1B1B19; font-weight: 500; margin-bottom: 4px; } .ds-exp-toggle { color: rgba(27,27,25,0.42); font-size: 20px; font-family: 'Fraunces', serif; }"
+    },
+    {
+      "name": "Portrait",
+      "kind": "custom",
+      "refersTo": "portrait",
+      "description": "Circular headshot with a soft ambient halo behind it and the system's one true drop shadow.",
+      "html": "<div class=\"ds-portrait-wrap\"><div class=\"ds-halo\"></div><img class=\"ds-portrait\" src=\"portrait.jpg\" alt=\"\"></div>",
+      "css": ".ds-portrait-wrap { position: relative; width: 112px; height: 112px; } .ds-halo { position: absolute; inset: -18px; background: radial-gradient(circle, rgba(212,173,92,0.36) 0%, rgba(212,173,92,0) 72%); filter: blur(4px); } .ds-portrait { position: relative; width: 112px; height: 112px; border-radius: 50%; object-fit: cover; display: block; border: 2px solid #F2F1EA; box-shadow: 0 6px 22px rgba(27,26,22,0.14); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Editorial",
+    "overview": "Two dark, ink-black spreads — the opening hero and the closing contact section — frame a long, warm stone-paper interior, the way a print magazine profile opens on a bold cover treatment, settles into readable body pages, and closes on a deliberate final spread. The voice is precise, technical, and engineered rather than decorative: hairline rules, exact stat counts, and an italic-serif caption system do the work that a card grid or drop-shadow system would do elsewhere. Burnished gold is the single accent, held rare enough that its every appearance reads as a deliberate mark, not a color choice.\n\nThe system explicitly avoids the vocabulary of a generic SaaS/startup landing page (no card grids, no gradient buttons, no icon-in-a-circle feature blocks) and avoids a \"flashy creative portfolio\" register (no bold color blocking, no illustration, no playful motion). What replaces those is structure: a fixed side rail acting as a table of contents, hairline dividers standing in for containers, and a two-stage light/dark palette that does the framing a hero image or shadow system would otherwise do.",
+    "keyCharacteristics": [
+      "Two-stage palette: warm stone-paper body, ink-black hero/contact bookends.",
+      "Fraunces serif (display/headline/title/caption) paired with Inter sans (body/label) — no third face.",
+      "Gold used as a rare signal, never a fill: kickers, italic emphasis, active states, stat numbers.",
+      "Depth via ambient glow and hairline rules, not drop shadows or card containers.",
+      "A fixed dot-rail side nav functions as both navigation and a live scroll-position indicator."
+    ],
+    "rules": [
+      { "name": "The Rare Gold Rule", "body": "Gold never fills a shape — no gold buttons, gold backgrounds, or gold badges. It only marks: a kicker word, an italicized name, a stat number, an active dot, a hovered link.", "section": "colors" },
+      { "name": "The Bookend Rule", "body": "The night palette is reserved for the hero and contact sections only. Every section in between stays on the stone-paper stage.", "section": "colors" },
+      { "name": "The One-Italic Rule", "body": "Italic Fraunces is reserved for kickers and the single emphasized word in the hero name. It never carries a full sentence or paragraph.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Sections, tags, and text blocks carry no shadow. If something needs to feel raised, reach for the ambient glow treatment or a hairline border before reaching for box-shadow.", "section": "elevation" },
+      { "name": "The Told-and-Shown Rule", "body": "A claim PRODUCT.md calls a genuine differentiator, not just a fact, gets a structural visual device in addition to prose — continuity is a sentence in the About copy and a connected thread in the Experience accordion.", "section": "components" }
+    ],
+    "dos": [
+      "Do treat gold as a mark, not a fill — kickers, one italic word, stat numbers, hover states, the active nav dot.",
+      "Do keep the dark palette to exactly the hero and contact sections; every section between them stays on stone-paper.",
+      "Do use hairline borders as the default way to separate content — reach for a divider before reaching for a container.",
+      "Do let Fraunces own every display/headline/title/caption moment and keep Inter to body copy and labels — no third typeface."
+    ],
+    "donts": [
+      "Don't add box-shadow or card-style containers to content sections — depth comes from the ambient glow treatment and hairlines only.",
+      "Don't introduce a filled or bordered gold button — no component in this system uses gold as a background color.",
+      "Don't round corners beyond the established set (circle, 999px pill, 4px tooltip) — there is no card-radius aesthetic to extend.",
+      "Don't set full paragraphs or multi-word headings in italic Fraunces — italic is reserved for kickers and single-word emphasis."
+    ]
+  }
+}

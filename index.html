@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
 <title>Baha Eddine Boukhzar — Cloud &amp; Platform Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +16,8 @@
     --line-soft: rgba(24,24,22,0.07);
     --ink:#1B1B19;
     --ink-dim: rgba(27,27,25,0.64);
-    --ink-faint: rgba(27,27,25,0.42);
-    --gold:#A1752B;
-    --teal:#3E5C61;
+    --ink-faint: rgba(27,27,25,0.64);
+    --gold:#82581F;
     --serif:'Fraunces', serif;
     --sans:'Inter', sans-serif;
   }
@@ -91,6 +91,39 @@
   nav.rail .dot-item:hover .label{opacity:1; transform:translateX(0);}
   @media (max-width:820px){ nav.rail{display:none;} }
 
+  /* -------- mobile top nav -------- */
+  nav.mobile-topnav{display:none;}
+  @media (max-width:820px){
+    nav.mobile-topnav{
+      display:flex;
+      position:sticky;
+      top:0;
+      z-index:60;
+      gap:22px;
+      padding:14px 20px;
+      background:rgba(228,227,220,0.92);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    nav.mobile-topnav::-webkit-scrollbar{display:none;}
+    nav.mobile-topnav a{
+      flex-shrink:0;
+      font-family:var(--sans);
+      font-size:13px;
+      color:var(--ink-dim);
+      text-decoration:none;
+      white-space:nowrap;
+      padding-bottom:2px;
+      border-bottom:1px solid transparent;
+      transition:color .2s, border-color .2s;
+    }
+    nav.mobile-topnav a:hover, nav.mobile-topnav a:focus-visible{color:var(--ink); border-color:var(--gold);}
+  }
+
   /* -------- hero -------- */
   .hero{
     --bg:#20211B;
@@ -99,7 +132,7 @@
     --line-soft: rgba(243,240,230,0.08);
     --ink:#F3F0E6;
     --ink-dim: rgba(243,240,230,0.68);
-    --ink-faint: rgba(243,240,230,0.44);
+    --ink-faint: rgba(243,240,230,0.58);
     --gold:#D4AD5C;
     background:var(--bg);
     color:var(--ink);
@@ -185,8 +218,22 @@
     font-size:18px;
     color:var(--ink-dim);
     max-width:46ch;
-    margin:0 0 36px;
+    margin:0 0 28px;
   }
+  .hero-stats{
+    display:flex;
+    gap:34px;
+    margin-bottom:32px;
+  }
+  .hero-stats .hstat{display:flex; flex-direction:column; gap:2px;}
+  .hero-stats .hstat-num{
+    font-family:var(--serif);
+    font-size:28px;
+    font-weight:500;
+    color:var(--gold);
+    line-height:1;
+  }
+  .hero-stats .hstat-lbl{font-size:12px; color:var(--ink-faint);}
   .hero .meta-row{
     display:flex;
     gap:28px;
@@ -221,13 +268,15 @@
   @media (max-width:820px){ section{padding-left:0;} .hero{padding-left:0;} .scroll-cue{left:40px;} }
 
   .reveal{
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .js .reveal{
     opacity:0;
     transform:translateY(24px);
-    transition:opacity .7s ease, transform .7s ease;
   }
   .reveal.in{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1; transform:none; transition:none;}
+    .reveal, .js .reveal{opacity:1; transform:none; transition:none;}
     .hero .field-line{animation:none;}
     .hero .glow{animation:none;}
   }
@@ -286,7 +335,6 @@
   .exp-row{
     border-bottom:1px solid var(--line);
     padding:26px 0;
-    cursor:pointer;
   }
   .exp-row .exp-top{
     display:flex;
@@ -294,6 +342,15 @@
     align-items:baseline;
     gap:20px;
     flex-wrap:wrap;
+    width:100%;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    font:inherit;
+    color:inherit;
+    text-align:left;
+    cursor:pointer;
   }
   .exp-row .exp-company{
     font-family:var(--serif);
@@ -306,11 +363,11 @@
     white-space:nowrap;
   }
   .exp-row .exp-body{
-    max-height:0;
     overflow:hidden;
     transition:max-height .5s ease;
   }
-  .exp-row.open .exp-body{max-height:900px;}
+  .js .exp-row .exp-body{max-height:0;}
+  .js .exp-row.open .exp-body{max-height:900px;}
   .exp-role{
     padding-top:20px;
     display:grid;
@@ -322,8 +379,36 @@
   .exp-role + .exp-role{border-top:1px solid var(--line-soft); margin-top:16px; padding-top:20px;}
   .exp-role .r-meta{color:var(--ink-faint); font-size:12.5px; padding-top:2px;}
   .exp-role .r-title{color:var(--ink); font-weight:500; margin-bottom:4px;}
+  .r-current{
+    font-family:var(--sans);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-left:8px;
+    vertical-align:middle;
+  }
   .exp-role ul{margin:0; padding-left:18px;}
   .exp-role li{margin-bottom:5px;}
+  .exp-body--threaded .exp-role{position:relative; padding-left:24px;}
+  .exp-body--threaded .exp-role::before{
+    content:"";
+    position:absolute;
+    left:8px; top:26px;
+    width:7px; height:7px;
+    border-radius:50%;
+    background:#9A968A;
+  }
+  .exp-body--threaded .exp-role--current::before{background:var(--gold);}
+  .exp-body--threaded .exp-role::after{
+    content:"";
+    position:absolute;
+    left:11px; top:33px; bottom:-16px;
+    width:1px;
+    background:var(--line);
+  }
+  .exp-body--threaded .exp-role:last-of-type::after{display:none;}
   .exp-note{
     grid-column:1/-1;
     font-size:12.8px;
@@ -354,6 +439,10 @@
     padding:5px 12px;
     border-radius:999px;
   }
+  @media (max-width:640px){
+    .skill-cat{flex-direction:column; gap:10px;}
+    .skill-cat .cat-name{width:auto;}
+  }
 
   /* certifications */
   .cert-list{display:flex; flex-direction:column;}
@@ -378,7 +467,7 @@
     --line-soft: rgba(243,240,230,0.08);
     --ink:#F3F0E6;
     --ink-dim: rgba(243,240,230,0.68);
-    --ink-faint: rgba(243,240,230,0.44);
+    --ink-faint: rgba(243,240,230,0.58);
     --gold:#D4AD5C;
     background:var(--bg);
     color:var(--ink);
@@ -392,7 +481,7 @@
     gap:18px;
     padding:16px 0;
     border-top:1px solid var(--line-soft);
-    max-width:520px;
+    max-width:620px;
   }
   .contact-block .row:first-child{border-top:none;}
   .contact-block .rlabel{
@@ -410,6 +499,17 @@
     transition:color .25s, border-color .25s;
   }
   .contact-block .rvalue a:hover{color:var(--gold); border-color:var(--gold);}
+  .contact-block .row-email{padding-bottom:26px;}
+  .contact-block .row-email .rvalue a{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(28px,3.6vw,40px);
+    color:var(--ink);
+    border-bottom:2px solid var(--gold);
+    padding-bottom:3px;
+    overflow-wrap:anywhere;
+  }
+  .contact-block .row-email .rvalue a:hover{color:var(--gold);}
   .social-row{
     display:flex;
     gap:22px;
@@ -460,6 +560,15 @@
 </head>
 <body>
 
+<nav class="mobile-topnav" aria-label="Section navigation">
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <nav class="rail" id="rail">
   <div class="dot-item" data-target="#hero"><button aria-label="Home"><span class="dot"></span></button><span class="label">Home</span></div>
   <div class="dot-item" data-target="#about"><button aria-label="About"><span class="dot"></span></button><span class="label">About</span></div>
@@ -480,6 +589,9 @@
     <div class="eyebrow">Paris, France</div>
     <h1 class="name">Baha Eddine<br><em>Boukhzar.</em></h1>
     <p class="tagline">I build and run Kubernetes platforms on Google Cloud — from migrating fleets of applications to the cloud, to the infrastructure teams rely on every day.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-num">~10</span><span class="hstat-lbl">years in platform eng.</span></div>
+    </div>
     <div class="meta-row">
       <a href="mailto:bahaeddine.boukhzar@gmail.com">bahaeddine.boukhzar@gmail.com</a>
       <span>Cloud &amp; Platform Engineer @ Renault Group</span>
@@ -517,16 +629,16 @@
     <div class="exp-index reveal">
 
       <div class="exp-row open" data-exp>
-        <div class="exp-top">
+        <button type="button" class="exp-top" aria-expanded="true" aria-controls="exp-body-renault">
           <span class="exp-company">Renault Group</span>
           <span class="exp-when">Dec 2018 — Present <span class="exp-toggle">＋</span></span>
-        </div>
-        <div class="exp-body">
+        </button>
+        <div class="exp-body exp-body--threaded" id="exp-body-renault">
 
-          <div class="exp-role">
+          <div class="exp-role exp-role--current">
             <div class="r-meta">Nov 2024 — Present</div>
             <div>
-              <div class="r-title">Software Factory Platform Engineer</div>
+              <div class="r-title">Software Factory Platform Engineer <span class="r-current">Current</span></div>
               <ul>
                 <li>Own and maintain the Software Factory (GitLab, Artifactory, SonarQube) used group-wide.</li>
                 <li>Led the migration of GitLab from AWS to GCP.</li>
@@ -568,11 +680,11 @@
       </div>
 
       <div class="exp-row" data-exp>
-        <div class="exp-top">
+        <button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-ingenico">
           <span class="exp-company">Ingenico Group</span>
           <span class="exp-when">Feb 2018 — Dec 2018 <span class="exp-toggle">＋</span></span>
-        </div>
-        <div class="exp-body">
+        </button>
+        <div class="exp-body" id="exp-body-ingenico">
           <div class="exp-role" style="grid-template-columns:1fr;">
             <div>
               <div class="r-title">Continuous Integration Expert</div>
@@ -587,11 +699,11 @@
       </div>
 
       <div class="exp-row" data-exp>
-        <div class="exp-top">
+        <button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-dauphine">
           <span class="exp-company">Paris-Dauphine University</span>
           <span class="exp-when">Dec 2017 — Jan 2018 <span class="exp-toggle">＋</span></span>
-        </div>
-        <div class="exp-body">
+        </button>
+        <div class="exp-body" id="exp-body-dauphine">
           <div class="exp-role" style="grid-template-columns:1fr;">
             <div>
               <div class="r-title">DevOps Engineer</div>
@@ -605,11 +717,11 @@
       </div>
 
       <div class="exp-row" data-exp>
-        <div class="exp-top">
+        <button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-sofrecom">
           <span class="exp-company">Sofrecom Tunisia</span>
           <span class="exp-when">Apr 2016 — Nov 2017 <span class="exp-toggle">＋</span></span>
-        </div>
-        <div class="exp-body">
+        </button>
+        <div class="exp-body" id="exp-body-sofrecom">
           <div class="exp-role" style="grid-template-columns:1fr;">
             <div>
               <div class="r-title">Systems &amp; Integration Engineer</div>
@@ -744,8 +856,10 @@
 
   // expandable experience rows
   document.querySelectorAll('[data-exp]').forEach(row=>{
-    row.querySelector('.exp-top').addEventListener('click', ()=>{
-      row.classList.toggle('open');
+    const top = row.querySelector('.exp-top');
+    top.addEventListener('click', ()=>{
+      const isOpen = row.classList.toggle('open');
+      top.setAttribute('aria-expanded', String(isOpen));
     });
   });
 </script>
