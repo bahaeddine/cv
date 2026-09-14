@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   :root{
     --bg:#E4E3DC;
@@ -265,6 +264,7 @@
     position:relative;
     border-top:1px solid var(--line-soft);
   }
+  @media (min-width:821px){ .hero .wrap{padding-left:0;} }
   @media (max-width:820px){ section{padding-left:0;} .hero{padding-left:0;} .scroll-cue{left:40px;} }
 
   .reveal{
@@ -352,11 +352,7 @@
     text-align:left;
     cursor:pointer;
   }
-  .exp-row .exp-company{
-    font-family:var(--serif);
-    font-size:23px;
-    font-weight:500;
-  }
+  .exp-row h3{margin:0; font-family:var(--serif); font-size:23px; font-weight:500;}
   .exp-row .exp-when{
     font-size:12.5px;
     color:var(--ink-faint);
@@ -383,7 +379,7 @@
   }
   .exp-role + .exp-role{border-top:1px solid var(--line-soft); margin-top:16px; padding-top:20px;}
   .exp-role .r-meta{color:var(--ink-faint); font-size:12.5px; padding-top:2px;}
-  .exp-role .r-title{color:var(--ink); font-weight:500; margin-bottom:4px;}
+  .exp-role .r-title{color:var(--ink); font-weight:500; font-size:inherit; margin:0 0 4px;}
   .r-current{
     font-family:var(--sans);
     font-size:11px;
@@ -546,11 +542,15 @@
     margin-top:30px;
   }
   .social-row a{
-    font-size:18px;
     color:var(--ink-dim);
     transition:color .2s, transform .2s;
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px;
+    margin:-13px;
   }
+  .social-row a svg{width:18px; height:18px;}
   .social-row a:hover{color:var(--gold); transform:translateY(-2px);}
   .quicknav{
     padding:26px 40px 26px 78px;
@@ -611,7 +611,7 @@
 <section id="hero" class="hero">
   <div class="field-line"></div>
   <div class="glow"></div>
-  <div class="wrap" style="padding-left:0;">
+  <div class="wrap">
     <div class="portrait-wrap">
       <div class="halo"></div>
       <img class="portrait" src="./media/images/baha2.png" alt="Baha Eddine Boukhzar">
@@ -657,17 +657,17 @@
     <p class="section-summary reveal">My professional journey — click a company to explore each role and experience.</p>
     <div class="exp-index reveal">
       <div class="exp-row open" data-exp>
-        <button type="button" class="exp-top" aria-expanded="true" aria-controls="exp-body-renault">
+        <h3><button type="button" class="exp-top" aria-expanded="true" aria-controls="exp-body-renault">
           <span class="exp-company">Renault Group</span>
           <span class="exp-when">Dec 2018 — Present <span class="exp-toggle">＋</span></span>
-        </button>
+        </button></h3>
         <div class="exp-body exp-body--threaded" id="exp-body-renault">
          <div class="exp-body-inner">
 
           <div class="exp-role exp-role--current">
             <div class="r-meta">Nov 2024 — Present</div>
             <div>
-              <div class="r-title">Software Factory Platform Engineer <span class="r-current">Current</span></div>
+              <h4 class="r-title">Software Factory Platform Engineer <span class="r-current">Current</span></h4>
               <ul>
                 <li>Own and evolve Renault Group's Software Factory platform, including GitLab, Artifactory and SonarQube.</li>
                 <li>Led the migration of GitLab from AWS to Google Cloud Platform.</li>
@@ -683,7 +683,7 @@
           <div class="exp-role">
             <div class="r-meta">Jan 2022 — Oct 2024</div>
             <div>
-              <div class="r-title">Kubernetes Platform Engineer</div>
+              <h4 class="r-title">Kubernetes Platform Engineer</h4>
               <ul>
                 <li>Designed, built and operated Renault's shared Kubernetes platform on GKE, serving product and development teams across the organization.</li>
                 <li>Automated GKE cluster and platform provisioning using Terraform and Config Connector, with Argo CD for GitOps-based delivery.</li>
@@ -699,7 +699,7 @@
           <div class="exp-role">
             <div class="r-meta">Dec 2018 — Dec 2021</div>
             <div>
-              <div class="r-title">Cloud Migration Engineer</div>
+              <h4 class="r-title">Cloud Migration Engineer</h4>
               <ul>
                 <li>Migrated 1,000+ applications from on-premises environments to GCP and GKE as part of Renault's cloud transformation.</li>
                 <li>Industrialized application migrations through automated infrastructure provisioning and delivery using Terraform, GitLab CI, Docker and Helm.</li>
@@ -715,15 +715,15 @@
       </div>
 
       <div class="exp-row" data-exp>
-        <button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-ingenico">
+        <h3><button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-ingenico">
           <span class="exp-company">Ingenico Group</span>
           <span class="exp-when">Feb 2018 — Dec 2018 <span class="exp-toggle">＋</span></span>
-        </button>
+        </button></h3>
         <div class="exp-body" id="exp-body-ingenico">
          <div class="exp-body-inner">
           <div class="exp-role" style="grid-template-columns:1fr;">
             <div>
-              <div class="r-title">Continuous Integration Expert</div>
+              <h4 class="r-title">Continuous Integration Expert</h4>
               <ul>
                 <li>Built a CI pipeline (Jenkins, Nexus, Docker, Vagrant, Maven/Gradle) for embedded payment-terminal software.</li>
                 <li>Automated migration of Java, Python and C projects to Bitbucket.</li>
@@ -737,15 +737,15 @@
       </div>
 
       <div class="exp-row" data-exp>
-        <button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-dauphine">
+        <h3><button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-dauphine">
           <span class="exp-company">Paris-Dauphine University</span>
           <span class="exp-when">Dec 2017 — Jan 2018 <span class="exp-toggle">＋</span></span>
-        </button>
+        </button></h3>
         <div class="exp-body" id="exp-body-dauphine">
          <div class="exp-body-inner">
           <div class="exp-role" style="grid-template-columns:1fr;">
             <div>
-              <div class="r-title">DevOps Engineer</div>
+              <h4 class="r-title">DevOps Engineer</h4>
               <ul>
                 <li>Automated deployment of the Dauphine EBX solution with shell scripts and a versioned Docker image.</li>
                 <li>Wrote an Ansible playbook to install and configure Oracle DB on RedHat.</li>
@@ -758,15 +758,15 @@
       </div>
 
       <div class="exp-row" data-exp>
-        <button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-sofrecom">
+        <h3><button type="button" class="exp-top" aria-expanded="false" aria-controls="exp-body-sofrecom">
           <span class="exp-company">Sofrecom Tunisia</span>
           <span class="exp-when">Apr 2016 — Nov 2017 <span class="exp-toggle">＋</span></span>
-        </button>
+        </button></h3>
         <div class="exp-body" id="exp-body-sofrecom">
          <div class="exp-body-inner">
           <div class="exp-role" style="grid-template-columns:1fr;">
             <div>
-              <div class="r-title">Systems &amp; Integration Engineer</div>
+              <h4 class="r-title">Systems &amp; Integration Engineer</h4>
               <ul>
                 <li>Administered Orange Infra RedHat platforms and led the 2017 roadmap delivery.</li>
                 <li>Ran on-site workshops and acceptance tests with Orange subsidiaries.</li>
@@ -822,10 +822,10 @@
     <h2 class="head reveal">Certifications.</h2>
     <p class="section-summary reveal">Certifications that back up my hands-on experience.</p>
     <div class="cert-list reveal">
-      <div class="cert-item"><span class="cname">Certified Kubernetes Administrator (CKA)</span><a href="https://www.youracclaim.com/badges/5450373b-bc68-4c3e-84cd-5fb92c1fc9ec" target="_blank">verify</a></div>
-      <div class="cert-item"><span class="cname">Certified Kubernetes Application Developer (CKAD)</span><a href="https://www.youracclaim.com/badges/79428f23-ef60-450f-bd24-9b2c385c61c8" target="_blank">verify</a></div>
-      <div class="cert-item"><span class="cname">LFS158x — Introduction to Kubernetes, edX</span><a href="https://courses.edx.org/certificates/d978a6fcd3ca488693dae1b5344f0297" target="_blank">verify</a></div>
-      <div class="cert-item"><span class="cname">Red Hat Certified System Administrator (RHCSA)</span><a href="https://www.redhat.com/rhtapps/certification/verify/?certId=160-214-961" target="_blank">verify</a></div>
+      <div class="cert-item"><span class="cname">Certified Kubernetes Administrator (CKA)</span><a href="https://www.youracclaim.com/badges/5450373b-bc68-4c3e-84cd-5fb92c1fc9ec" target="_blank" rel="noopener">verify</a></div>
+      <div class="cert-item"><span class="cname">Certified Kubernetes Application Developer (CKAD)</span><a href="https://www.youracclaim.com/badges/79428f23-ef60-450f-bd24-9b2c385c61c8" target="_blank" rel="noopener">verify</a></div>
+      <div class="cert-item"><span class="cname">LFS158x — Introduction to Kubernetes, edX</span><a href="https://courses.edx.org/certificates/d978a6fcd3ca488693dae1b5344f0297" target="_blank" rel="noopener">verify</a></div>
+      <div class="cert-item"><span class="cname">Red Hat Certified System Administrator (RHCSA)</span><a href="https://www.redhat.com/rhtapps/certification/verify/?certId=160-214-961" target="_blank" rel="noopener">verify</a></div>
       <div class="cert-item"><span class="cname">LPIC-2 — Linux Professional Institute Certification</span></div>
       <div class="cert-item"><span class="cname">LPIC-1 — Linux Professional Institute Certification</span></div>
     </div>
@@ -852,9 +852,9 @@
         <span class="rvalue"><a href="./documents/bahaeddine-boukhzar-cv-en.pdf" download="Baha-Eddine-Boukhzar-CV.pdf">Resume</a></span>
       </div>
       <div class="social-row">
-        <a target="_blank" href="https://github.com/bahaeddine" aria-label="GitHub"><i class="fa fa-github"></i></a>
-        <a target="_blank" href="https://twitter.com/Bahaeddine05" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-        <a target="_blank" href="https://www.linkedin.com/in/bahaeddine-boukhzar-a06a5187" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        <a target="_blank" rel="noopener" href="https://github.com/bahaeddine" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.386-1.333-1.756-1.333-1.756-1.09-.744.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.303-5.467-1.334-5.467-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.004.404 2.29-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.912 1.235 3.222 0 4.61-2.807 5.624-5.48 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .32.216.694.825.576C20.565 21.795 24 17.297 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+        <a target="_blank" rel="noopener" href="https://twitter.com/Bahaeddine05" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.897-.959-2.178-1.555-3.594-1.555-2.719 0-4.924 2.205-4.924 4.924 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.317 0-.626-.03-.928-.086.627 1.956 2.444 3.379 4.6 3.418-1.68 1.318-3.809 2.105-6.102 2.105-.396 0-.79-.023-1.175-.069 2.179 1.397 4.768 2.212 7.548 2.212 9.057 0 14.01-7.502 14.01-14.009 0-.213-.005-.425-.014-.636.961-.695 1.796-1.562 2.457-2.549z"/></svg></a>
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/bahaeddine-boukhzar-a06a5187" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       </div>
     </div>
   </div>

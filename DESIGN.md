@@ -51,6 +51,16 @@ typography:
     fontSize: "13px"
     fontWeight: 500
     letterSpacing: "0.02em"
+  stat:
+    fontFamily: "Fraunces, Georgia, serif"
+    fontSize: "clamp(28px, 3vw, 40px)"
+    fontWeight: 500
+    lineHeight: 1
+  micro:
+    fontFamily: "Inter, -apple-system, sans-serif"
+    fontSize: "12px"
+    fontWeight: 400
+    letterSpacing: "0–0.06em"
 rounded:
   circle: "50%"
   pill: "999px"
@@ -134,6 +144,8 @@ A near-monochrome stone-and-ink palette carries almost the entire page; a single
 - **Caption** (400 italic, 15px, Burnished Gold): the kicker line above every section headline ("Who I am", "Where I've worked") — Fraunces' one italic use in the system.
 - **Body** (400, 16px, line-height 1.6, max ~56ch): paragraph copy; the hero tagline runs at 18px, everything else at 16px.
 - **Label** (500, 13px, letter-spacing 0.02–0.03em): nav labels, the hero eyebrow, meta-row text — always uppercase-adjacent in weight even when not uppercased.
+- **Stat** (500, `clamp(28px, 3vw, 40px)`, Fraunces, Burnished Gold, line-height 1): the system's large serif numerals — the hero stat (28px), the About stat-list (34px), and the primary email link's signature scale (`clamp(28px, 3.6vw, 40px)`) are the same device at three sizes, never a fourth.
+- **Micro** (11–13px, Inter, `ink-faint`/`ink-dim`): the smallest utility tier — nav-dot tooltips, date ranges (`.r-meta`, `.exp-when`), the "TECHNOLOGIES" eyebrow and its tags, certification "verify" links, contact `rlabel`s, the footer quicknav and social row. Individual values drift by half a pixel between components (11 / 11.5 / 12 / 12.5 / 12.8 / 13.5px) as each was hand-tuned against its own line-length and neighboring type, not from a shared token — treat the tier as a size *band*, not a single fixed value.
 
 ### Named Rules
 **The One-Italic Rule.** Italic Fraunces is reserved for kickers and the single emphasized word in the hero name ("*Boukhzar.*"). It never carries a full sentence or paragraph.
