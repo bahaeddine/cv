@@ -367,7 +367,7 @@
     transition:max-height .5s ease;
   }
   .js .exp-row .exp-body{max-height:0;}
-  .js .exp-row.open .exp-body{max-height:900px;}
+  .js .exp-row.open .exp-body{max-height:1600px;} /* JS overrides this with the exact content height */
   .exp-role{
     padding-top:20px;
     display:grid;
@@ -419,6 +419,31 @@
   }
   @media (max-width:640px){ .exp-role{grid-template-columns:1fr;} }
   .exp-toggle{color:var(--ink-faint); font-size:20px; font-family:var(--serif);}
+  .r-tech{
+    grid-column:1/-1;
+    margin-top:8px;
+    padding-top:10px;
+    border-top:1px dashed var(--line-soft);
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 8px;
+    align-items:center;
+  }
+  .r-tech-label{
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-right:2px;
+  }
+  .r-tech .tech-tag{
+    font-size:11.5px;
+    color:var(--ink-dim);
+    border:1px solid var(--line);
+    padding:3px 9px;
+    border-radius:999px;
+  }
 
   /* skills */
   .skill-cats{display:flex; flex-direction:column; gap:26px;}
@@ -604,7 +629,7 @@
 <section id="about">
   <div class="wrap">
     <div class="kicker reveal">Who I am</div>
-    <h2 class="head reveal">Senior Platform Engineer with 10+ years of experience designing, building and operating cloud and Kubernetes platforms. Strong expertise in Kubernetes, Google Cloud Platform (GCP), Terraform, Config Connector, GitOps and Argo CD, with a focus on infrastructure automation, platform reliability and scalable cloud architectures.</h2>
+    <h2 class="head reveal">Senior Platform Engineer with 10+ years of experience building scalable cloud and Kubernetes platforms, with strong expertise in GCP, Terraform, GitOps and infrastructure automation.</h2>
     <p class="section-summary reveal">A quick overview of my background and what I focus on day to day.</p>
     <div class="about-grid reveal">
       <div>
@@ -614,7 +639,7 @@
       <div class="stat-list">
         <div><div class="num">1,000+</div><div class="lbl">applications migrated to GCP / Kubernetes</div></div>
         <div><div class="num">3</div><div class="lbl">platform roles, one continuous system</div></div>
-        <div><div class="num">~8</div><div class="lbl">years in cloud &amp; infrastructure engineering</div></div>
+        <div><div class="num">~10</div><div class="lbl">years in cloud &amp; infrastructure engineering</div></div>
       </div>
     </div>
   </div>
@@ -624,7 +649,7 @@
   <div class="wrap">
     <div class="kicker reveal">Where I've worked</div>
     <h2 class="head reveal">A platform built one role at a time.</h2>
-    <p class="section-summary reveal">Every role I've held since 2018, in order — click a company to see the details.</p>
+    <p class="section-summary reveal">My professional journey — click a company to explore each role and experience.</p>
 
     <div class="exp-index reveal">
 
@@ -647,6 +672,7 @@
                 <li>Drove continuous platform modernization by migrating GCP resource management from Terraform to Config Connector and transitioning the Software Factory ingress from NGINX Ingress Controller to Envoy Gateway ahead of end of support.</li>
                 <li>Promoted a culture of continuous learning and improvement within the team, encouraging the adoption of new tools and practices to enhance platform efficiency and reliability.</li>
               </ul>
+              <div class="r-tech"><span class="r-tech-label">Technologies</span><span class="tech-tag">GitLab</span><span class="tech-tag">GitLab Runner</span><span class="tech-tag">GCP</span><span class="tech-tag">AWS</span><span class="tech-tag">Artifactory</span><span class="tech-tag">SonarQube</span><span class="tech-tag">Terraform</span><span class="tech-tag">Ansible</span><span class="tech-tag">Private Service Connect (PSC)</span><span class="tech-tag">Cloud Run</span><span class="tech-tag">Cloud Functions</span><span class="tech-tag">Config Connector</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">Docker</span><span class="tech-tag">Helm</span><span class="tech-tag">Envoy Gateway</span><span class="tech-tag">Python</span><span class="tech-tag">Go</span></div>
             </div>
           </div>
 
@@ -662,6 +688,7 @@
                 <li>Collaborated with development teams to ensure platform capabilities met their needs and facilitated efficient application delivery.</li>
                 <li>Actively participated in platform design discussions and contributed to the evolution of the platform roadmap.</li>
               </ul>
+              <div class="r-tech"><span class="r-tech-label">Technologies</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">GKE</span><span class="tech-tag">GCP</span><span class="tech-tag">Docker</span><span class="tech-tag">Helm</span><span class="tech-tag">Terraform</span><span class="tech-tag">Argo CD</span><span class="tech-tag">GitOps</span><span class="tech-tag">Config Connector</span><span class="tech-tag">Prometheus</span><span class="tech-tag">Grafana</span><span class="tech-tag">Alertmanager</span><span class="tech-tag">cert-manager</span><span class="tech-tag">External Secrets</span><span class="tech-tag">Crossplane</span><span class="tech-tag">Dex</span><span class="tech-tag">Dynatrace</span><span class="tech-tag">Envoy Gateway</span><span class="tech-tag">Velero</span><span class="tech-tag">Python</span></div>
             </div>
           </div>
 
@@ -676,10 +703,9 @@
                 <li>Contributed to production-ready, multi-tenant Kubernetes architectures supporting migrated workloads.</li>
                 <li>Provided guidance and support to development teams during the migration process, ensuring smooth transitions and adherence to best practices.</li>
               </ul>
+              <div class="r-tech"><span class="r-tech-label">Technologies</span><span class="tech-tag">GCP</span><span class="tech-tag">GKE</span><span class="tech-tag">Docker</span><span class="tech-tag">Helm</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">Terraform</span><span class="tech-tag">GitLab CI</span><span class="tech-tag">Argo CD</span><span class="tech-tag">Bash</span><span class="tech-tag">Python</span><span class="tech-tag">Vault</span></div>
             </div>
           </div>
-
-          <div class="exp-note">Across all three roles: hands-on with Kubernetes, Config Connector, ArgoCD, Terraform and GitLab CI.</div>
         </div>
       </div>
 
@@ -697,6 +723,7 @@
                 <li>Automated migration of Java, Python and C projects to Bitbucket.</li>
                 <li>Moved the Ingenico Build System from Vagrant to Docker.</li>
               </ul>
+              <div class="r-tech"><span class="r-tech-label">Technologies</span><span class="tech-tag">Jenkins</span><span class="tech-tag">Nexus</span><span class="tech-tag">Docker</span><span class="tech-tag">Vagrant</span><span class="tech-tag">Maven</span><span class="tech-tag">Gradle</span><span class="tech-tag">Java</span><span class="tech-tag">Python</span><span class="tech-tag">C</span><span class="tech-tag">Bitbucket</span></div>
             </div>
           </div>
         </div>
@@ -715,6 +742,7 @@
                 <li>Automated deployment of the Dauphine EBX solution with shell scripts and a versioned Docker image.</li>
                 <li>Wrote an Ansible playbook to install and configure Oracle DB on RedHat.</li>
               </ul>
+              <div class="r-tech"><span class="r-tech-label">Technologies</span><span class="tech-tag">Shell</span><span class="tech-tag">Docker</span><span class="tech-tag">Ansible</span><span class="tech-tag">Oracle Database</span><span class="tech-tag">Red Hat Enterprise Linux</span></div>
             </div>
           </div>
         </div>
@@ -733,6 +761,7 @@
                 <li>Administered Orange Infra RedHat platforms and led the 2017 roadmap delivery.</li>
                 <li>Ran on-site workshops and acceptance tests with Orange subsidiaries.</li>
               </ul>
+              <div class="r-tech"><span class="r-tech-label">Technologies</span><span class="tech-tag">Red Hat Enterprise Linux</span><span class="tech-tag">Linux Administration</span></div>
             </div>
           </div>
         </div>
@@ -749,28 +778,28 @@
     <p class="section-summary reveal">The tools and technologies I use to build and run cloud platforms.</p>
     <div class="skill-cats reveal">
       <div class="skill-cat">
-        <div class="cat-name">Orchestration</div>
-        <div class="tags"><span class="tag">Kubernetes / GKE</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">Crossplane</span><span class="tag">Config Connector</span></div>
+        <div class="cat-name">Cloud &amp; Platform</div>
+        <div class="tags"><span class="tag">Google Cloud Platform</span><span class="tag">GKE</span><span class="tag">Cloud Run</span><span class="tag">Cloud Functions</span><span class="tag">IAM</span><span class="tag">Workload Identity</span><span class="tag">Shared VPC</span><span class="tag">Private Service Connect</span><span class="tag">Cloud DNS</span><span class="tag">Cloud Storage</span><span class="tag">Firewall</span><span class="tag">Secure Web Proxy</span><span class="tag">PSA</span><span class="tag">Cloud SQL</span><span class="tag">Database Migration Service</span><span class="tag">Artifact Registry</span><span class="tag">AWS</span></div>
       </div>
       <div class="skill-cat">
-        <div class="cat-name">IaC &amp; delivery</div>
-        <div class="tags"><span class="tag">Terraform</span><span class="tag">ArgoCD / GitOps</span><span class="tag">GitLab CI</span><span class="tag">GitLab Runner</span><span class="tag">GRIT</span><span class="tag">Jenkins</span><span class="tag">Ansible</span></div>
+        <div class="cat-name">Kubernetes &amp; Containers</div>
+        <div class="tags"><span class="tag">Kubernetes</span><span class="tag">GKE</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">Envoy Gateway</span><span class="tag">Velero</span><span class="tag">Kubed</span><span class="tag">Dex</span></div>
       </div>
       <div class="skill-cat">
-        <div class="cat-name">Scripting</div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span></div>
+        <div class="cat-name">IaC &amp; GitOps</div>
+        <div class="tags"><span class="tag">Terraform</span><span class="tag">Argo CD</span><span class="tag">GitOps</span><span class="tag">Config Connector</span><span class="tag">Crossplane</span><span class="tag">Ansible</span></div>
       </div>
       <div class="skill-cat">
-        <div class="cat-name">Observability &amp; security</div>
-        <div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Alertmanager</span><span class="tag">cert-manager</span><span class="tag">External Secrets</span><span class="tag">Vault</span><span class="tag">Dynatrace</span></div>
+        <div class="cat-name">CI/CD &amp; Software Factory</div>
+        <div class="tags"><span class="tag">GitLab</span><span class="tag">GitLab CI</span><span class="tag">GitLab Runner</span><span class="tag">GRIT</span><span class="tag">Jenkins</span><span class="tag">Artifactory</span><span class="tag">SonarQube</span></div>
       </div>
       <div class="skill-cat">
-        <div class="cat-name">Google Cloud</div>
-        <div class="tags"><span class="tag">GKE</span><span class="tag">Cloud Run</span><span class="tag">Cloud Functions</span><span class="tag">Cloud Storage</span><span class="tag">IAM</span><span class="tag">Service Accounts</span><span class="tag">Workload Identity</span><span class="tag">Shared VPC</span><span class="tag">Firewall</span><span class="tag">Secure Web Proxy</span><span class="tag">Cloud DNS</span><span class="tag">PSA</span><span class="tag">PSC</span><span class="tag">Cloud SQL</span><span class="tag">Database Migration Service</span><span class="tag">Artifact Registry</span></div>
+        <div class="cat-name">Observability &amp; Security</div>
+        <div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Alertmanager</span><span class="tag">Dynatrace</span><span class="tag">cert-manager</span><span class="tag">External Secrets</span><span class="tag">Vault</span></div>
       </div>
       <div class="skill-cat">
-        <div class="cat-name">Platform tooling</div>
-        <div class="tags"><span class="tag">Velero</span><span class="tag">Kubed</span><span class="tag">Dex</span><span class="tag">Envoy</span><span class="tag">Goldilocks</span><span class="tag">Artifactory</span><span class="tag">SonarQube</span></div>
+        <div class="cat-name">Automation</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Go</span></div>
       </div>
     </div>
   </div>
@@ -861,10 +890,15 @@
   // expandable experience rows
   document.querySelectorAll('[data-exp]').forEach(row=>{
     const top = row.querySelector('.exp-top');
+    const body = row.querySelector('.exp-body');
+    const sync = () => { body.style.maxHeight = row.classList.contains('open') ? body.scrollHeight + 'px' : ''; };
+    sync();
     top.addEventListener('click', ()=>{
       const isOpen = row.classList.toggle('open');
       top.setAttribute('aria-expanded', String(isOpen));
+      sync();
     });
+    window.addEventListener('resize', sync);
   });
 </script>
 
